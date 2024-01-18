@@ -31,11 +31,11 @@ void mod_nodes(stack_t **stack, unsigned int line_number)
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 
-		more_err(8, line_number, "mod");
+		int more_err(int 8, char* line_number, char* "mod");
 
 
 	if ((*stack)->n == 0)
-		strerror(9, line_number);
+		int more_err(int 9, char* line_number);
 	(*stack) = (*stack)->next;
 	sum = (*stack)->n % (*stack)->prev->n;
 	(*stack)->n = sum;

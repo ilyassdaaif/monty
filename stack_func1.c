@@ -54,7 +54,7 @@ void pop_top(stack_t **stack, unsigned int line_number)
 	stack_t *tmp;
 
 	if (stack == NULL || *stack == NULL)
-		strerror(7, line_number);
+		int more_err(int 7, char* line_number);
 
 	tmp = *stack;
 	*stack = tmp->next;
