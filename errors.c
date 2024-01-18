@@ -26,18 +26,18 @@ void err_ilyass(int error_cd, ...)
 			break;
 		case 2:
 			fprintf(stderr, "Error: Can't open file %s\n",
-				va_arg(ag, char *));
+				va_arg(argument, char *));
 			break;
 		case 3:
-			l_num = va_arg(ag, int);
-			op = va_arg(ag, char *);
-			fprintf(stderr, "L%d: unknown instruction %s\n", l_num, op);
+			line_number = va_arg(argument, int);
+			op = va_arg(argument, char *);
+			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, op);
 			break;
 		case 4:
 			fprintf(stderr, "Error: malloc failed\n");
 			break;
 		case 5:
-			fprintf(stderr, "L%d: usage: push integer\n", va_arg(ag, int));
+			fprintf(stderr, "L%d: usage: push integer\n", va_arg(argument, int));
 			break;
 		default:
 			break;
