@@ -1,8 +1,8 @@
 #include "monty.h"
 
 /**
- * err - Prints appropiate error messages determined by their error code.
- * @error_code: The error codes are the following:
+ * err_ilyass - Prints appropiate error messages determined by their error code.
+ * @error_cd: The error codes are the following:
  * (1) => The user does not give any file or more than one file to the program.
  * (2) => The file provided is not a file that can be opened or read.
  * (3) => The file provided contains an invalid instruction.
@@ -12,11 +12,11 @@
  * (7) => When the stack it empty for pop.
  * (8) => When stack is too short for operation.
  */
-void err_ilyas(int error_cd, ...)
+void err_ilyass(int error_cd, ...)
 {
 	va_list argument;
 	char *open;
-	int line_number-ilyass;
+	int line_number_ilyass;
 
 	va_start(argument, error_code);
 	switch (error_code)
@@ -29,9 +29,9 @@ void err_ilyas(int error_cd, ...)
 				va_arg(argument, char *));
 			break;
 		case 3:
-			line_number-ilyass = va_arg(argument, int);
+			line_number_ilyass = va_arg(argument, int);
 			open = va_arg(argument, char *);
-			fprintf(stderr, "L%d: unknown instruction %s\n", line_number-ilyass, open);
+			fprintf(stderr, "L%d: unknown instruction %s\n", line_number_ilyass, open);
 			break;
 		case 4:
 			fprintf(stderr, "Error: malloc failed\n");
@@ -47,20 +47,20 @@ void err_ilyas(int error_cd, ...)
 }
 
 /**
- * more_err_ilyas - handles errors.
- * @error_code: The error codes are the following:
+ * more_err_ilyass - handles errors.
+ * @error_cd: The error codes are the following:
  * (6) => When the stack it empty for pint.
  * (7) => When the stack it empty for pop.
  * (8) => When stack is too short for operation.
  * (9) => Division by zero.
  */
-void more_err_ilyas(int error_cd, ...)
+void more_err_ilyass(int error_cd, ...)
 {
 	va_list argument;
 	char *open;
-	int line_number-ilyass;
+	int line_number_ilyass;
 
-	va_start(argument, error_code);
+	va_start(argument, error_cd);
 	switch (error_code)
 	{
 		case 6:
@@ -72,9 +72,9 @@ void more_err_ilyas(int error_cd, ...)
 				va_arg(argument, int));
 			break;
 		case 8:
-			line_number-ilyass = va_arg(argument, unsigned int);
+			line_number_ilyass = va_arg(argument, unsigned int);
 			open = va_arg(argument, char *);
-			fprintf(stderr, "L%d: can't %s, stack too short\n", line_number-ilyass, open);
+			fprintf(stderr, "L%d: can't %s, stack too short\n", line_number_ilyass, open);
 			break;
 		case 9:
 			fprintf(stderr, "L%d: division by zero\n",
@@ -88,25 +88,25 @@ void more_err_ilyas(int error_cd, ...)
 }
 
 /**
- * string_err - handles errors.
- * @error_code: The error codes are the following:
+ * string_err_ilyass - handles errors.
+ * @error_cd: The error codes are the following:
  * (10) ~> The number inside a node is outside ASCII bounds.
  * (11) ~> The stack is empty.
  */
-void string_err_ilyas(int error_cd, ...)
+void string_err_ilyass(int error_cd, ...)
 {
 	va_list argument;
-	int line_number-ilyass;
+	int line_number_ilyass;
 
 	va_start(argument, error_cd);
-	line_number-ilyass = va_arg(argument, int);
-	switch (error_code)
+	line_number_ilyass = va_arg(argument, int);
+	switch (error_cd)
 	{
 		case 10:
-			fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number-ilyass);
+			fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number_ilyass);
 			break;
 		case 11:
-			fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number-ilyass);
+			fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number_ilyass);
 			break;
 		default:
 			break;

@@ -50,7 +50,7 @@ int len_chars(FILE *);
 void find_func_ilyass(char *opcode, char *value, int line_number, int format);
 
 /*Stack operations*/
-stack_t *create_node-ilyass(int number);
+stack_t *create_node_ilyass(int number);
 void free_nodes_ilyass(void);
 void print_stack_ilyass(stack_t **, unsigned int);
 void add_to_stack_daaif(stack_t **, unsigned int);
@@ -66,7 +66,7 @@ void swap_nodes_ilyass(stack_t **, unsigned int);
 /*Math operations with nodes*/
 void add_nodes_ilyass(stack_t **, unsigned int);
 void sub_nodes_ilyass(stack_t **, unsigned int);
-void div_nodes-ilyass(stack_t **, unsigned int);
+void div_nodes_ilyass(stack_t **, unsigned int);
 void mul_nodes_ilyass(stack_t **, unsigned int);
 void mod_nodes_ilyass(stack_t **, unsigned int);
 
