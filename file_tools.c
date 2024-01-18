@@ -11,7 +11,7 @@ void open_file(char *file_name)
 	FILE *fd = fopen(file_name, "r");
 
 	if (file_name == NULL || fd == NULL)
-		error(2, file_name);
+		perror(2, file_name);
 
 	read_file(fd);
 	fclose(fd);
@@ -54,7 +54,7 @@ int parse_line(char *buffer, int line_number, int format)
 	const char *delim = "\n ";
 
 	if (buffer == NULL)
-		err(4);
+		perror(4);
 
 	opcode = strtok(buffer, delim);
 	if (opcode == NULL)
