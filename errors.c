@@ -18,7 +18,7 @@ void err_ilyass(int error_cd, ...)
 	char *op;
 	int line_number;
 
-	va_start(ag, error_cd);
+	va_start(argument, error_cd);
 	switch (error_cd)
 	{
 		case 1:
@@ -100,7 +100,7 @@ void string_err(int error_cd, ...)
 
 	va_start(argument, error_cd);
 	line_number = va_arg(argument, int);
-	switch (error_code)
+	switch (error_cd)
 	{
 		case 10:
 			fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
