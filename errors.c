@@ -98,7 +98,7 @@ void string_err(int error_code, ...)
 	va_list ag;
 	int l_num;
 
-	va_start(ag, error_cd);
+	va_start(ag, error_code);
 	l_num = va_arg(ag, int);
 	switch (error_code)
 	{
