@@ -14,9 +14,9 @@
  */
 void err_ilyass(int error_cd, ...)
 {
-	va_list argument;
+	va_list ag;
 	char *op;
-	int line_number;
+	int l_num;
 
 	va_start(ag, error_cd);
 	switch (error_cd)
@@ -93,7 +93,7 @@ void more_err(int error_cd, ...)
  * (10) ~> The number inside a node is outside ASCII bounds.
  * (11) ~> The stack is empty.
  */
-void string_err(int error_cd, ...)
+void string_err(int error_code, ...)
 {
 	va_list ag;
 	int l_num;
