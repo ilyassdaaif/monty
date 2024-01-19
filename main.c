@@ -1,4 +1,5 @@
 #include "monty.h"
+stack_t *head = NULL;
 
 /**
  * main - entry point
@@ -14,10 +15,8 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	stack_t *head = NULL;
-
-	open_file(argv[1], &head);
-	free_nodes(&head);
+	open_file(argv[1]);
+	free_nodes();
 	return (0);
 }
 
