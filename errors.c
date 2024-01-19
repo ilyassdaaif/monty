@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * err_ilyass - Prints appropiate err messages determined by their error code.
+ * err - Prints appropiate err messages determined by their error code.
  * @error_cd: The error codes are the following:
  * (1) => The user does not give any file or more than one file to the program.
  * (2) => The file provided is not a file that can be opened or read.
@@ -12,7 +12,7 @@
  * (7) => When the stack it empty for pop.
  * (8) => When stack is too short for operation.
  */
-void err_ilyass(int error_cd, ...)
+void err(int error_cd, ...)
 {
 	va_list ag;
 	char *op;
@@ -58,7 +58,7 @@ void more_err(int error_cd, ...)
 {
 	va_list ag;
 	char *op;
-	int line_number;
+	int l_num;
 
 	va_start(ag, error_cd);
 	switch (error_cd)
@@ -72,9 +72,9 @@ void more_err(int error_cd, ...)
 				va_arg(ag, int));
 			break;
 		case 8:
-			line_number = va_arg(ag, unsigned int);
+			l_num = va_arg(ag, unsigned int);
 			op = va_arg(ag, char *);
-			fprintf(stderr, "L%d: can't %s, stack too short\n", line_number, op);
+			fprintf(stderr, "L%d: can't %s, stack too short\n", l_num, op);
 			break;
 		case 9:
 			fprintf(stderr, "L%d: division by zero\n",
